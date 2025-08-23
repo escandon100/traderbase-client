@@ -1,0 +1,115 @@
+@use "../../../../styles/responsiveness.scss";
+
+
+.support{
+    display: flex;
+    padding: 20px;
+    height: 100%;
+
+    .left{
+        flex: 1;
+        font-size: 18px;
+        padding: 200px 100px;
+
+
+        form {
+
+            input{
+                width: 100%;
+                padding: 20px;
+                border-radius: 5px;
+                font-size: 18px;
+            
+            }
+
+         
+            label{
+                display: block;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            textArea{
+                width: 100%;
+                border: #fff;
+                resize: vertical;
+                padding: 20px;
+                border-radius: 5px;
+                font-size: 18px;
+            
+            }
+
+       
+
+            button{
+                background-color: #0d6efd ;
+                color: #fff;
+                border: none;
+                border-radius:5px;
+                display: block;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                font-size: 18px;
+                cursor: pointer;
+                margin-top: 20px;
+            }
+        }
+    }
+    .right{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .accordion{
+            padding: 5px;
+            box-shadow: 0px 0px 10px black;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 18px;
+
+            @include responsiveness.small{
+                padding: 5px;
+            }
+            @include responsiveness.medium{
+                padding: 10px;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 20px black;
+
+            }
+
+            .typography {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+
+                @include responsiveness.small{
+                    gap: 10px;
+                }
+                
+            }
+
+            .accordionDetails {
+                color: #4a5566;
+                line-height: 1.5;
+                font-size: 18px;
+
+                @include responsiveness.small{
+                    font-size: 14px;
+                }
+                @include responsiveness.medium{
+                    font-size: 16px;
+                }
+            }
+
+
+
+        }
+
+    }
+}
+
+

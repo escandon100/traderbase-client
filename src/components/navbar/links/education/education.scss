@@ -1,0 +1,105 @@
+@use "../../../../../styles/responsiveness.scss";
+
+.education{
+    display: flex;
+    background-color: #242730;
+    justify-content: space-around;
+    padding: 50px 100px;    
+
+    @include responsiveness.small{
+        flex-direction: column;
+        padding: 10px 30px;
+        gap: 15px;
+        justify-content: space-between;
+    }
+
+    .educationCenter{
+        flex: 1;
+
+        @include responsiveness.medium{
+            flex: 2;
+        }
+
+    }
+    .analytics{
+        flex: 1;
+
+    }
+    .educationAndAnalytics{
+        flex: 2;
+
+
+    }
+
+
+
+
+
+    h1{
+        margin-bottom: 20px;
+        font-size: 22px;
+        display: flex;
+        gap: 10px;
+        color: #fff;
+
+        @include responsiveness.small{
+            font-size: 14px;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;  
+        
+        @include responsiveness.small{
+            gap: 15px;
+        }
+
+        li{
+            list-style-type: circle;
+            color: #01a976;
+
+            p{
+                line-height: 1.6;
+                color: #807f7e;
+                font-size: 20px;
+                
+                @include responsiveness.medium{
+                    font-size: 16px;
+                }
+                @include responsiveness.small{
+                    font-size: 12px;
+                }
+            }
+    
+
+       
+
+
+            .educationLinks{
+
+                font-size: 20px;
+
+                @include responsiveness.small{
+                    font-size: 12px;
+                }
+                @include responsiveness.medium{
+                    font-size: 16px;
+                }
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+
+            
+        }
+    }
+
+
+
+}

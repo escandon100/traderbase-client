@@ -1,0 +1,209 @@
+@use "../../../../styles/responsiveness.scss";
+
+.advicesNav{
+    padding: 20px 30px;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    gap: 5px;
+
+    @include responsiveness.small{
+        padding: 10px;
+    }
+
+    @include responsiveness.medium{
+        padding: 20px;
+    }
+
+
+    .link{
+        display: flex;
+        gap : 5px ;
+        color : #01a876;
+
+        P{
+            font-size: 18px;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+            @include responsiveness.medium{
+                font-size: 16px;
+            }
+          
+        }
+
+        & .icon{
+            font-size: 18px;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+            @include responsiveness.medium{
+                font-size: 16px;
+            }
+        }
+
+    }
+
+    span{
+        color: #4a5566 ;
+        font-size: 18px;
+
+        @include responsiveness.small{
+            font-size: 14px;
+        }
+          @include responsiveness.medium{
+            font-size: 16px;
+        }
+    }
+}
+
+.advices{
+    color : black;
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+
+
+    @include responsiveness.small{
+        padding:10px;
+        
+    }
+    @include responsiveness.medium{
+        padding:20px;
+        gap: 20px;
+    }
+  
+    
+    .main{
+
+        flex : 4;
+        display : flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include responsiveness.small{
+            width: 100%;
+            flex: none;
+            gap: 20px;
+        }
+          @include responsiveness.medium{
+            flex: 2.5;
+            gap: 30px;
+        }
+
+
+        h1{
+           font-size: 26px;
+
+           @include responsiveness.small{
+                font-size: 20px;
+            }
+            @include responsiveness.medium{
+                font-size: 24px;
+            }
+        }
+
+        h3{
+            font-size: 24px;
+
+        
+             @include responsiveness.small{
+                font-size: 16px;
+            }
+            @include responsiveness.medium{
+                font-size: 20px;
+            }
+        }
+
+        P{
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4a5566;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+            @include responsiveness.medium{
+                font-size: 16px;
+            }
+        }
+
+         button{
+            display: flex;
+            width: 400px;
+            align-self: center;
+            justify-content: center;
+            color: #fff;
+            gap: 15px;
+            padding: 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: #01a976;
+            text-align: left;
+
+            @include responsiveness.small{
+                width: 300px;
+                padding: 15px;
+            }
+
+            @include responsiveness.medium{
+                width: 400px;
+                padding: 25px;
+            }
+
+
+            &:hover{
+                background-color: #fff;
+                border: 2px solid #01a976;
+
+                & h1{
+
+                    & .icon{
+                        color: #01a876;
+                    }
+                }
+
+                & h3{
+                    color: #01a876;
+                }
+            }
+
+      
+
+
+            h1{
+                font-size: 26px;
+                color: #fff;
+
+                @include responsiveness.small{
+                    font-size: 22px;
+                }
+
+                @include responsiveness.medium{
+                    font-size: 24px;
+                }
+            
+            }
+
+            h3{
+                font-size: 24px;
+
+                @include responsiveness.small{
+                    font-size: 18px;
+                }
+                @include responsiveness.medium{
+                    font-size: 20px;
+                }
+            }
+        //  
+         
+         }
+
+
+    }
+
+
+}
+
+

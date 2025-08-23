@@ -1,0 +1,153 @@
+@use "../../../styles/responsiveness.scss";
+
+
+.tradingSteps{
+    color: black;
+    padding: 50px;
+    text-align: center;
+
+    @include responsiveness.small{
+        padding: 20px;
+    }
+
+    @include responsiveness.medium{
+        padding: 20px;
+    }
+
+    h1{
+        color: black;
+        margin-bottom: 50px;
+        font-size: 24px;
+
+        @include responsiveness.small{
+            font-size: 20px;
+        }
+        @include responsiveness.medium{
+            font-size: 22px;
+        }
+    }
+
+    h3{
+        font-size: 22px;
+
+        @include responsiveness.small{
+            font-size: 18px;
+        }
+         @include responsiveness.medium{
+            font-size: 20px;
+        }
+    }
+    p{
+        line-height: 1.6;
+        font-size: 20px;
+
+        @include responsiveness.small{
+            font-size: 14px;
+        }
+        
+        @include responsiveness.medium{
+            font-size: 16px;
+        }
+    }
+
+
+    .steps{
+        display: flex;
+        justify-content: space-around;
+
+
+        @include responsiveness.small{
+            flex-wrap: wrap;
+        }
+
+
+        .step{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            width: 20%;
+            margin-bottom: 50px;
+            
+
+            
+
+            @include responsiveness.small{
+                width: 150px;
+            }
+          
+
+            img{
+                width: 150px;
+                margin-left : auto ;
+                margin-right: auto;
+                
+ 
+                @include responsiveness.small{
+                    width: 50px;
+                    
+                }
+
+                @include responsiveness.medium{
+                    width: 100px;
+                }
+            }
+        }
+
+
+
+    }
+
+
+
+        .registration{
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+
+
+            @include responsiveness.small{
+                gap: 20px;
+            }
+
+
+            .button{
+
+                padding: 30px;
+                border-radius: 10px;
+                font-size: 20px;
+
+                @include responsiveness.small{
+                    font-size: 14px;
+                    padding: 15px;
+                }
+
+                @include responsiveness.medium{
+                    padding: 20px;
+                    font-size: 16px;
+                }
+
+                &.registerButton{
+                    background-color: #24b371;
+                    border: none;
+                }
+
+
+                &.loginButton{
+                    background-color: white;
+                    border: 3px solid #24b371;
+                }
+            }
+        }
+
+    
+    
+
+
+
+
+  
+
+
+  
+}

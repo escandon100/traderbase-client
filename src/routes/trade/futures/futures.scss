@@ -1,0 +1,292 @@
+@use "../../../../styles/responsiveness.scss";
+
+
+
+.futuresNav{
+    padding: 20px 30px;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    gap: 5px;
+
+    @include responsiveness.small{
+        padding: 10px;
+    }
+
+    @include responsiveness.medium{
+        padding: 20px;
+    }
+
+
+    .link{
+        display: flex;
+        gap : 5px ;
+        color : #01a876;
+
+        P{
+            font-size: 18px;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+            @include responsiveness.medium{
+                font-size: 16px;
+            }
+          
+        }
+
+        & .icon{
+            font-size: 18px;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+            @include responsiveness.medium{
+                font-size: 16px;
+            }
+        }
+
+    }
+
+    span{
+        color: #4a5566 ;
+        font-size: 18px;
+
+        @include responsiveness.small{
+            font-size: 14px;
+        }
+          @include responsiveness.medium{
+            font-size: 16px;
+        }
+    }
+}
+
+
+
+.futures{
+    color : black;
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+
+
+    @include responsiveness.small{
+        padding:10px;
+    }
+     @include responsiveness.medium{
+        padding:20px;
+        gap: 20px;
+    }
+
+    .main{
+
+        flex : 4 ;
+        display : flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include responsiveness.small{
+            width: 100%;
+            flex: none;
+            gap: 20px;
+        }
+        @include responsiveness.medium{
+            flex: 2.5;
+            gap: 30px;
+        }
+        
+
+    
+
+        h1{
+             font-size: 26px;
+
+             @include responsiveness.small{
+                font-size: 20px;
+            }
+            @include responsiveness.medium{
+                font-size: 24px;
+            }
+        }
+
+        h3{
+             font-size: 24px;
+
+            @include responsiveness.small{
+                font-size: 16px;
+            }
+            @include responsiveness.medium{
+                font-size: 20px;
+            }
+        }
+
+        P{
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4a5566;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+            @include responsiveness.medium{
+                font-size: 16px;
+            }
+        }
+        
+
+         table{
+            width : 100%;
+            text-align: left;
+            border-collapse: collapse;
+
+            tr{
+                border: 1px solid #e7ebf1;
+
+                th{
+                    background-color: #e7ebf1;
+                    padding: 15px;
+                    font-size: 18px;
+                    
+
+                    @include responsiveness.small{
+                        font-size: 12px;
+                        padding: 5px ;
+                    }
+                      @include responsiveness.medium{
+                        font-size: 14px;
+                        padding: 10px;
+                    }
+                  }
+                td{
+                    padding: 15px;
+                    font-size: 18px;
+
+                    @include responsiveness.small{
+                        font-size: 10px;
+                        padding:5px;
+                    }
+                       @include responsiveness.medium{
+                        font-size: 14px;
+                        padding: 10px;
+                    }
+
+                  }
+
+            }
+         }
+
+        button{
+            display: flex;
+            width: 400px;
+            align-self: center;
+            justify-content: center;
+            color: #fff;
+            gap: 15px;
+            padding: 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: #01a976;
+            text-align: left;
+
+            @include responsiveness.small{
+                width: 300px;
+                padding: 15px;
+            }
+
+            @include responsiveness.medium{
+                width: 400px;
+                padding: 25px;
+            }
+
+
+            &:hover{
+                background-color: #fff;
+                border: 2px solid #01a976;
+
+                & h1{
+
+                    & .icon{
+                        color: #01a876;
+                    }
+                }
+
+                & h3{
+                    color: #01a876;
+                }
+            }
+
+
+            h1{
+               font-size: 26px;
+                color: #fff;
+
+                @include responsiveness.small{
+                    font-size: 22px;
+                }
+
+                @include responsiveness.medium{
+                    font-size: 24px;
+                }
+            
+            }
+
+            h3{
+                font-size: 24px;
+
+                @include responsiveness.small{
+                    font-size: 18px;
+                }
+                @include responsiveness.medium{
+                    font-size: 20px;
+                }
+            }
+         
+         
+         }
+    }
+
+    .side{
+        flex : 1;
+
+        @include responsiveness.small{
+            flex: none;
+            display: none;
+        }
+
+        @include responsiveness.medium{
+            flex: 1;
+        }
+
+        
+
+        h3{
+            font-size: 24px;
+
+              @include responsiveness.medium{
+                font-size: 22px;
+            }
+        }
+
+        ul{
+            list-style-type: none;
+
+            li{
+                margin : 40px 10px ;
+                font-size: 20px;
+
+                
+                &.futuresClicked{
+                    background-color: #d4d5e0;
+                    border-left: 4px solid #555866;
+                    padding: 10px;
+                    color: #666973;
+
+                }
+                @include responsiveness.medium{
+                    margin: 25px 5px;
+                    font-size: 16px;
+                }
+
+            }
+        }
+    }
+}

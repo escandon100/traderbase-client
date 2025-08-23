@@ -1,0 +1,107 @@
+@use "../../../styles/responsiveness.scss";
+
+
+.adminLogin{
+    background-color: #231839;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @include responsiveness.small{
+        gap: 20px;
+    }
+
+    form{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 30px 30px;
+        text-align: center;
+        border-radius: 10px;
+        color: #000;
+
+
+        @include responsiveness.small{
+            padding: 20px 15px;
+
+        }
+
+        h1{
+
+            @include responsiveness.small{
+                font-size: 20px;
+            }
+        }
+
+    
+        p{
+            font-size: 16px;
+
+            @include responsiveness.small{
+                font-size: 12px;
+            }
+
+            .link{
+                color :#4081b8;
+            }
+
+            &.error{
+                color: red;
+            }
+        }
+
+        label{
+            font-size: 18px;
+            text-align: left;
+
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+        }
+
+        input{
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            border-bottom: 2px solid grey;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+
+                &:focus{
+                box-shadow: 5px 5px 5px ;
+                outline: none;
+            }
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+
+
+        }
+
+        button{
+            background-color: #4081b8;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #ffff;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+
+        }
+    }
+
+}
+

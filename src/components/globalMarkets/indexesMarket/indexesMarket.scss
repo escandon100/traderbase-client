@@ -1,0 +1,64 @@
+@use "../../../../styles/responsiveness.scss";
+
+
+
+.indexesMarket{
+
+    color: white;
+
+    table, th , td{
+        border-collapse: separate;
+        border-spacing: 0 10px;
+
+       
+    }
+
+    table{
+        width: 80%;
+        text-align: center;
+        font-size: 18px;
+
+        @include responsiveness.small{
+            font-size: 16px;
+           
+        }
+
+        @include responsiveness.medium{
+            font-size: 16px;
+        }
+   
+
+        tr{
+
+            .green{
+                color: #46b483;
+                ;
+            }
+            .red{
+                color: #ff676e;
+            }
+
+            &:nth-child(even) {
+                background-color: #282930;
+              }
+
+
+              td{
+                padding: 14px;
+
+
+                @include responsiveness.small{
+                    padding: 10px;
+                }
+
+              }
+
+
+        }
+
+
+       
+    }
+ 
+
+}

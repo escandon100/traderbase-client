@@ -1,0 +1,19 @@
+@use "../../../styles/responsiveness.scss";
+
+.earningsPopup {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  z-index: 1000;
+
+  @include responsiveness.small{
+    font-size: 14px;
+  }
+
+}

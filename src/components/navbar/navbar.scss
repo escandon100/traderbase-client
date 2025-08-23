@@ -1,0 +1,296 @@
+@use "../../../styles/responsiveness.scss";
+
+.navbar{
+    background-color: #1f2025;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding : 10px 20px;
+    position: relative;
+
+
+
+    @include responsiveness.small{
+        padding-right: 20px;
+    }
+
+    @include responsiveness.medium{
+        padding : 10px;
+    }
+
+    .logo{
+        img{
+            width: 200px;
+
+            @include responsiveness.small{
+                width: 120px;
+            }
+            @include responsiveness.medium{
+                width: 140px;
+            }
+        }
+    }
+    .accountButtonsMobile{
+        display: none;
+
+        
+        @include responsiveness.small{
+            display: block;
+        }
+
+        
+        .button{
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 12px;
+
+            @include responsiveness.small{
+                padding: 4px 4px;
+                border-radius: 0px;
+                font-size: 12px;
+
+            }
+
+
+            &.loginButton{
+                background-color: black;
+                border: 1px solid #01a976;
+
+                &:hover{
+                    color: #01a976 ;
+                }
+
+            }
+            &.registrationButton{
+                background-color: #01a976;
+                border: 1px solid #01a976;
+                &:hover{
+                    background-color: #02c087;
+                }
+            }   
+
+
+    }
+
+}
+    .navIcons{
+
+
+        .menuIcon{
+            display: none;
+    
+            &.hide{
+                display: none;
+            }
+    
+            @include responsiveness.small{
+                display: block;
+            }
+            
+            img{
+                width: 30px;
+            }
+        }
+    
+        .cancelIcon{
+            display: block;
+    
+            &.hide{
+                display: none;
+            }
+            
+            img{
+                width: 30px;
+            }
+    
+    
+        }
+
+       
+    
+
+    }
+   
+
+    
+    .links{
+        width: 500px;
+        z-index: 2;
+        font-size: 14px;
+
+
+        @include responsiveness.medium{
+            width: 50%;
+        }
+
+    
+     
+
+        @include responsiveness.small{
+            display: none;
+
+            &.activeMenu{
+                display: block;
+                font-size: 10px;
+                position: absolute;
+                width: 100%;
+                top: 58px;
+                height: 35px;
+                left: 0;
+                z-index: 2;
+                background-color: #1f2025;
+                border-top: 1px solid #01a876;
+                
+
+                & ul{
+                    display: flex;
+                    justify-content:space-around;
+                    margin-top: 10px;
+
+                    & li{
+
+                        & .link{
+                            display: flex;
+                            gap: 1px;
+                        
+                            
+                            & .arrow{
+                                width: 10px;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+
+        }
+        
+        ul{
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+
+
+            @include responsiveness.small{
+                justify-content: space-around;
+                padding:0 20px;
+            }
+
+
+            @include responsiveness.medium{
+                justify-content: space-around;
+            }
+
+
+            li{
+                .link{
+                    
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    font-size: 16px;
+
+                    @include responsiveness.small{
+                        font-size: 12px;
+                    }
+
+                    @include responsiveness.medium{
+                        font-size: 12px;
+                    }
+
+                    &.active{
+                        color: #01a876;
+                    }
+
+                    &:hover{
+                        color:#01a876 ;
+                    }
+
+                    &:hover .arrow{
+                        transform: rotate(90deg);
+                    }
+                
+
+                    .arrow{
+                        width: 12px;
+                    }
+
+                }
+
+            }
+        }
+
+
+        
+        .linksBody{
+            position: absolute;
+            width: 100%;
+            top: 70px;
+            left: 0;
+            z-index: 3;  
+
+            @include responsiveness.small{
+                top: 35px;
+            }
+
+        }
+
+    }
+    .accountButtons{
+        display: flex;
+        justify-content: space-around;
+        width: 300px;
+
+        @include responsiveness.small{
+            display: none;
+        }
+
+        @include responsiveness.medium{
+            width: 30%;
+        }
+        
+
+            .button{
+                color: white;
+                border-radius: 5px;
+                padding: 12px;
+                font-size: 16px;
+
+                @include responsiveness.medium{
+                    font-size: 14px;
+                    padding: 8px;
+                }
+
+
+                &.loginButton{
+                    background-color: black;
+                    border: 1px solid #01a976;
+    
+                    &:hover{
+                        color: #01a976 ;
+                    }
+    
+                }
+                &.registrationButton{
+                    background-color: #01a976;
+                    border: 1px solid #01a976;
+                    &:hover{
+                        background-color: #02c087;
+                    }
+                }   
+
+
+        }
+
+
+   
+
+ 
+
+    }
+     
+}

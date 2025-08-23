@@ -1,0 +1,20 @@
+@use "../../../../styles/responsiveness.scss";
+
+.depositWithdrawal{
+
+    display: flex;
+    color: #fff;
+
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    }
+
+    .deposit{
+        flex: 1;
+    }
+    .withdrawal{
+        flex: 1;
+    }
+}

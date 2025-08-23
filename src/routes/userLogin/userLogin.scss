@@ -1,0 +1,140 @@
+@use "../../../styles/responsiveness.scss";
+
+
+
+.userLogin{
+    background-color: #231839;
+    color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @include responsiveness.small{
+        gap: 20px;
+    }
+
+    img{
+        height: 100px;
+        width: 400px;
+
+
+        @include responsiveness.small{
+            width: 200px;
+            height: 50px;
+        
+        }
+    }
+
+
+
+    form{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 30px 30px;
+        text-align: center;
+        border-radius: 10px;
+
+
+        @include responsiveness.small{
+            padding: 20px 15px;
+
+        }
+
+        h1{
+
+            @include responsiveness.small{
+                font-size: 20px;
+            }
+        }
+
+    
+        p{
+            font-size: 16px;
+
+            @include responsiveness.small{
+                font-size: 12px;
+            }
+
+            .link{
+                color :#4081b8;
+            }
+
+            &.error{
+                color: red;
+            }
+        }
+
+        label{
+            font-size: 18px;
+            text-align: left;
+
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+        }
+
+        input{
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            border-bottom: 2px solid grey;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+
+                &:focus{
+                box-shadow: 5px 5px 5px ;
+                outline: none;
+            }
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+
+          
+
+        }
+        .passwordInput{
+
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            & input{
+                position: absolute;
+                left: 0;
+                width: 95%;
+            }
+            & span{
+                position: absolute;
+                right: 0;
+            }
+
+        }
+
+        button{
+            background-color: #4081b8;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #ffff;
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+
+        }
+    }
+
+}
+

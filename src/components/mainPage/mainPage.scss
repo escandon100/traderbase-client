@@ -1,0 +1,150 @@
+@use "../../../styles/responsiveness.scss";
+
+.mainPage{
+    
+    color: black;
+
+    .slide{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+
+        @include responsiveness.small{
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        @include responsiveness.medium{
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+ 
+
+
+        .slideText{
+            width: 100%;
+            line-height: 1.3;
+
+            @include responsiveness.small{
+                width: 100%;
+                line-height: 1.3;
+          
+            }
+
+            @include responsiveness.medium{
+                width: 100%;
+                line-height: 1.3;
+          
+            }
+       
+
+            h1{
+                color: #41ffc6;
+                font-size: 30px;
+                margin-bottom: 15px;
+
+                @include responsiveness.small{
+                    font-size: 18px;
+                }
+                
+                @include responsiveness.medium{
+                    font-size: 24px;
+                }
+
+             
+            }
+            h3{
+                color: white;
+                font-size: 36px;
+                margin-bottom: 20px;
+
+                @include responsiveness.small{
+                    font-size: 20px;
+                }
+                @include responsiveness.medium{
+                    font-size: 32px;
+                }
+
+
+            }
+
+            .images{
+                width: 100%;
+                display: flex;
+                gap: 20px;
+                margin-bottom: 20px;
+
+                img{
+
+                    width: 5%;
+                    
+                  @include responsiveness.small{
+                    width: 15%;
+                }
+
+                @include responsiveness.medium{
+                    width: 5%;
+                }
+
+
+                }
+
+            }
+
+            .button{
+                border: 3px solid #41ffc6;
+                padding: 15px;
+                background-color: #41ffc610;
+                color: white;
+                border-radius: 10px;
+                font-size: 22px;
+
+                @include responsiveness.small{
+                    padding: 10px;
+                    font-size: 18px;
+                }
+                @include responsiveness.medium{
+                    padding: 15px;
+                    font-size: 20px;
+                }
+
+                &:hover{
+                    border: 3px solid #01a876;
+                    background-color: #01a876;
+                }
+            }
+        }
+
+        &.slide1{
+            height: calc(100vh - 150px);
+            background-image: url("slide1.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        &.slide2{
+            height: calc(100vh - 150px);
+            background-image: url("slide2.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+        }
+        &.slide3{
+            height: calc(100vh - 150px);
+            background-image: url("slide3.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+
+        
+    }
+
+   
+
+
+}

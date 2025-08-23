@@ -1,0 +1,143 @@
+@use "../../../styles/responsiveness.scss";
+
+.download{
+    color: black;
+    padding: 50px 20px;
+    display: flex;
+    gap: 50px;
+
+    
+
+    @include responsiveness.small{
+        flex-direction: column;
+        padding: 20px;
+      
+    }
+
+    @include responsiveness.medium{
+        padding: 20px;
+    }
+
+
+
+
+    button{
+        border: solid 1px #13a076 ;
+        background-color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+ 
+
+
+    .left{
+
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-top: 100px;
+
+        h1{
+            font-size: 28px;
+
+            @include responsiveness.small{
+                font-size: 20px;
+            }
+
+             @include responsiveness.medium{
+                font-size: 22px;
+            }
+        }
+        
+        p{
+            font-size: 20px;
+            line-height: 2;
+            color: #807f7e;;
+
+
+            @include responsiveness.small{
+                font-size: 14px;
+            }
+            @include responsiveness.medium{
+                font-size: 16x;
+            }
+
+            
+        }
+
+       
+        @include responsiveness.small{
+            gap: 30px;
+            padding: 20px;
+        }
+
+        @include responsiveness.medium{
+            padding-left : 20px;
+            padding-right: 0px;
+        }
+
+     
+
+    
+
+        .downloadButtons{
+            display: flex;
+            gap: 50px;
+            width: 100%;
+
+            img{
+
+                width: 30%;
+
+                @include responsiveness.small{
+                    width: 25%;
+                }
+            
+            }
+
+            .desktop{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .mobile{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                .mobileText{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                }
+            }
+
+            p{
+                color: #13a076 ;
+            }
+        }
+    }
+
+
+
+    .right{
+        background-color: #eaecf2;
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        img{
+
+            @include responsiveness.small{
+                    width: 100%;
+            }
+
+            @include responsiveness.medium{
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,206 @@
+@use "../../../styles/responsiveness.scss";
+
+.reason1{
+    color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+
+    @include responsiveness.small{
+        padding: 20px;
+        gap: 50px;
+    }
+    @include responsiveness.medium{
+        padding: 20px;
+        gap: 50px;
+    }
+
+
+
+    .top{
+
+        h1{
+            color: #292944;
+            margin-bottom: 30px;
+            font-size: 26px;
+
+            @include responsiveness.small{
+                margin-bottom: 20px;
+                font-size: 20px;
+                width: 100%;
+                text-align: center;
+            }
+
+            @include responsiveness.medium{
+                font-size: 22px;
+            }
+
+        
+        }
+
+        .body{
+            display: flex;
+            gap: 30px;
+
+
+            @include responsiveness.small{
+                flex-direction: column;
+            }
+
+            @include responsiveness.medium{
+                flex-wrap: wrap;
+            }
+
+            .reason{            
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                @include responsiveness.small{
+                    gap: 10px;
+                }
+
+                @include responsiveness.medium{
+                    width: 45%;
+                    
+                }
+                .reasonHeading{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    
+                    img{
+                        height: 30px;
+                        width: 30px;
+
+                        @include responsiveness.small{
+                            height: 25px;
+                            width: 25px;
+                        }
+                    }
+
+                    
+                h3{
+
+                    font-size: 20px;
+                    color: #01a876 ;
+
+
+                    @include responsiveness.small{
+                        font-size: 16px;
+                    }
+
+                     @include responsiveness.medium{
+                        font-size: 20px;
+                    }
+                }
+                }
+
+                
+                p{
+                    line-height: 2;
+                    font-size: 18px;
+
+                    @include responsiveness.small{
+                        font-size: 14px;
+                    }
+                    @include responsiveness.medium{
+                        font-size: 14px;
+                    }
+                }
+            
+
+
+         
+            }
+        }
+    }
+
+    .bottom{
+
+        h1{
+            color: #292944;
+            margin-bottom: 30px;
+            font-size: 24px;
+
+            @include responsiveness.small{
+                font-size: 20px;
+            }
+
+            @include responsiveness.medium{
+                font-size: 22px;
+            }
+        }
+
+        .body{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            @include responsiveness.small{
+                flex-direction: column;
+            }
+            @include responsiveness.medium{
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .client{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+
+                @include responsiveness.medium{
+                    width: 45%;
+                }
+
+                .clientHeading{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+
+
+                    h3{
+                        font-size: 20px;
+                        color: #01a876 ;
+
+                        @include responsiveness.small{
+                            font-size: 18px;
+                        }
+                         @include responsiveness.medium{
+                            font-size: 20px;
+                        }
+                    }
+
+
+                    img{
+                        width: 40px;
+                        height: 40px;
+
+                    }
+                }
+
+                p{
+                    line-height: 2;
+                    font-size: 18px;
+
+                    @include responsiveness.small{
+                        font-size: 14px;
+                    }
+                     @include responsiveness.medium{
+                        font-size: 16px;
+                    }
+                }
+
+            }
+
+          
+        }
+    }
+
+}
