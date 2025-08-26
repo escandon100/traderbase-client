@@ -8,8 +8,8 @@
         @content
     }
 };
-@mixin large(){
-    @media (max-width : 1209px) and (min-width : 944px) {
+@mixin largest(){
+    @media (min-width : 1440px) {
         @content
     }
 };

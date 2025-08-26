@@ -2,3 +2,103 @@
 
 
 
+.transactionHistory {
+  padding: 2rem;
+  background: #f8fafc; // subtle light background
+  min-height: 100vh;
+
+  .pageTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f2937; // dark gray
+  }
+
+  .tableWrapper {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  .styledTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      background: #f1f5f9;
+      tr {
+        th {
+          text-align: left;
+          padding: 1rem;
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: #374151;
+          border-bottom: 2px solid #e5e7eb;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background 0.2s;
+
+        &:nth-child(even) {
+          background: #f9fafb;
+        }
+
+        &:hover {
+          background: #eef2ff;
+        }
+
+        td {
+          padding: 1rem;
+          font-size: 0.9rem;
+          color: #374151;
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+
+        .type{
+
+            &.deposit{
+            color: #059669; // green
+             font-weight: 600;
+
+            }
+
+             &.withdrawal {
+             color: #dc2626;
+            font-weight: 600;
+            }
+        }
+        .status {
+
+
+            &.success{
+                color: #16a34a;
+                font-weight: 600;
+            }
+
+            &.pending{
+                color: #d97706; 
+                font-weight: 600;
+            }
+            &.failed{
+                 color: #dc2626; // red
+                 font-weight: 600;
+
+            }
+        }
+        
+
+        .noData {
+          text-align: center;
+          padding: 2rem;
+          color: #6b7280;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

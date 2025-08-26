@@ -1,1 +1,160 @@
 @use "../../../../styles/responsiveness.scss";
+
+.refer-users {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  background: #f9fafb;
+
+  .refer-card,
+  .users-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+  }
+
+  .referral-box {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 1rem;
+      background: #f8fafc;
+      color: #334155;
+      outline: none;
+    }
+
+    .copy-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: #1d4ed8;
+      }
+    }
+  }
+
+  .users-card {
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 1rem;
+    }
+
+    .referral-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+
+      th,
+      td {
+        padding: 0.9rem 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+        font-size: 0.95rem;
+      }
+
+      th {
+        font-weight: 600;
+        color: #475569;
+        background: #f8fafc;
+      }
+
+      td {
+        color: #334155;
+      }
+
+      .status {
+        text-transform: capitalize;
+        padding: 0.2rem 0.7rem;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.85rem;
+
+        &.active {
+          background: #dcfce7;
+          color: #15803d;
+        }
+
+        &.pending {
+          background: #fef9c3;
+          color: #a16207;
+        }
+
+        &.inactive {
+          background: #fee2e2;
+          color: #b91c1c;
+        }
+      }
+    }
+
+    .no-referrals {
+      text-align: center;
+      color: #64748b;
+      margin-top: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .refer-users {
+    .referral-box {
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+
+      .copy-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .referral-table {
+      font-size: 0.85rem;
+
+      th,
+      td {
+        padding: 0.7rem;
+      }
+    }
+  }
+}

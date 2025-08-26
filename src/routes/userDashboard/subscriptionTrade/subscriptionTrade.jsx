@@ -1,26 +1,61 @@
 import React from "react";
-import "./subscriptionTrade.scss"
+import "./subscriptionTrade.scss";
 import { useOutletContext } from "react-router";
 
 const SubscriptionTrade = () => {
+  const message = useOutletContext();
+  const subscription = message.subscriptions[0]; // Assuming first subscription for now
 
-    const message = useOutletContext()
+  return (
+    <div className="subscription-trade">
+      <div className="trade-card">
+        <h2 className="title">Subscription Trade Details</h2>
 
-    return(
-        <div className="SubscriptionTrade">
-            <h1>{`Plan Name : ${message.subscriptions[0].planName}`}</h1>
-            <h1>{`Amount : $ ${message.subscriptions[0].amount}`}</h1>
-            <h1>{`Profit Percentaage : ${message.subscriptions[0].profitPercent}%`}</h1>
-            <h1>{`Duration : ${message.subscriptions[0].duration} days`}</h1>
-            <h1>{`Status : ${message.subscriptions[0].status}`}</h1>
-            <h1>{`Start Date : ${message.subscriptions[0].startDate}`}</h1>
-            <h1>{`End Date : ${message.subscriptions[0].endDate}`}</h1>
+        <div className="trade-info">
+          <div className="info-item">
+            <span className="label">Plan Name:</span>
+            <span className="value">{subscription.planName}</span>
+          </div>
+
+          <div className="info-item">
+            <span className="label">Amount:</span>
+            <span className="value">${subscription.amount}</span>
+          </div>
+
+          <div className="info-item">
+            <span className="label">Profit Percentage:</span>
+            <span className="value">{subscription.profitPercent}%</span>
+          </div>
+
+          <div className="info-item">
+            <span className="label">Duration:</span>
+            <span className="value">{subscription.duration} days</span>
+          </div>
+
+          <div className="info-item">
+            <span className="label">Status:</span>
+            <span
+              className={`value status ${
+                subscription.status === "active" ? "active" : "inactive"
+              }`}
+            >
+              {subscription.status}
+            </span>
+          </div>
+
+          <div className="info-item">
+            <span className="label">Start Date:</span>
+            <span className="value">{new Date(subscription.startDate).toLocaleDateString()}</span>
+          </div>
+
+          <div className="info-item">
+            <span className="label">End Date:</span>
+            <span className="value">{new Date(subscription.endDate).toLocaleDateString()}</span>
+          </div>
         </div>
+      </div>
+    </div>
+  );
+};
 
-    )
-
-
-}
-
-
-export default SubscriptionTrade
+export default SubscriptionTrade;

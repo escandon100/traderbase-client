@@ -52,7 +52,7 @@ const UserRegister = () => {
         <input type='email' name='email' placeholder='name@example.com' onChange={handleChange} required />
 
         <label>Phone Number</label>
-        <input type='text' name='phone' onChange={handleChange} required />
+        <input type='number' name='phone' onChange={handleChange} required />
 
         <div className='names'>
           <div className='name'>

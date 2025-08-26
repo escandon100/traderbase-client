@@ -10,7 +10,7 @@ const AdminTransaction = () => {
         type : "",
         amount : "",
         status : "",
-        date : ""
+        date : Date
     
     })
 
@@ -40,6 +40,7 @@ const AdminTransaction = () => {
             try{
                 const res = axios.post("http://localhost:5000/api/transactions/transaction", form)
                console.log(res) 
+               alert("successful Transaction")
             }catch(err){
                 console.log(err)
             }
@@ -58,14 +59,12 @@ const AdminTransaction = () => {
                 </select>
               </div>
                 <div className="field">
-                      <label>Type</label>
-            <input  name="type" value={form.type} onChange={handleChange} type="text" />
-
+                    <label>Type</label>
+                    <input  name="type" value={form.type} onChange={handleChange} type="text" />
                 </div>
                 <div className="field">
-                       <label>Amount</label>
-            <input name="amount" value={form.amount} onChange={handleChange} type="number" />
-
+                    <label>Amount</label>
+                    <input name="amount" value={form.amount} onChange={handleChange} type="number" />
                 </div>
                 <div className="field">
                     <label>Status</label>
@@ -73,9 +72,9 @@ const AdminTransaction = () => {
                 </div>
                 <div className="field">
                     <label>Date</label>
-                    <input type="date" name="date" onChange={handleChange} value={form.date}/>
-
+                    <input type="datetime-local" name="date" onChange={handleChange} value={form.date}/>
                 </div>
+             
           
          
 

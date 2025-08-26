@@ -42,8 +42,10 @@ const AdminSubscription = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
+          
           const res = await axios.post("http://localhost:5000/api/subscribe/create", form);
-    } catch (err) {
+          alert("successfully set transaction")
+        } catch (err) {
       console.error(err);
     }
 

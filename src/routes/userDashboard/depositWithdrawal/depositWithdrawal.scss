@@ -1,20 +1,231 @@
 @use "../../../../styles/responsiveness.scss";
 
-.depositWithdrawal{
+.depositWithdrawal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 3rem;
+  min-height: 100vh;
+  background: #f4f7fb;
+  flex-wrap: wrap;
 
+  .card {
+    flex: 1;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: #1e293b;
+      text-align: center;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      border: 1px solid #d0d7de;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+
+      span {
+        padding: 0.8rem 1rem;
+        background: #f3f4f6;
+        font-weight: bold;
+        color: #374151;
+        border-right: 1px solid #d0d7de;
+      }
+
+
+      input::-webkit-inner-spin-button , 
+      input::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+      }
+
+      input {
+        flex: 1;
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
+        border: none;
+        outline: none;
+
+        &:focus {
+          background: #f9fafb;
+        }
+      }
+    }
+    .payment-options {
+    margin-top: 2rem;
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+
+
+  
+    }
+
+    .option-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      padding: 1.2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 500;
+      color : #1e293b;
+      width: 100%;
+      max-width: 200px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+
+      &:hover {
+        background: #1e90ff;
+        color: white;
+        transform: translateY(-5px);
+      }
+
+      img{
+        height: 30px;
+        width: 30px;
+      }
+    }}
+
+    button {
+      width: 100%;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.deposit-btn {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: #fff;
+
+        &:hover {
+          background: linear-gradient(135deg, #059669, #047857);
+        }
+      }
+
+      &.withdraw-btn {
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+        color: #fff;
+
+        &:hover {
+          background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+      }
+    }
+  }
+}
+.confirmation {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+
+  p {
+    display: inline-block;
+    background: #e0f7ec;
+    color: #065f46;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.option-card.recommended {
+  border: 2px solid #f59e0b; // golden border
+  position: relative;
+}
+
+.option-card .badge {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  background: #f59e0b;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.btc-address {
+  margin-top: 1rem;
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 10px;
+  color: #111827;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+
+  strong {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .address-row {
     display: flex;
-    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 
-
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    p {
+      font-family: monospace;
+      font-size: 0.9rem;
+      word-break: break-all;
+      flex: 1;
     }
 
-    .deposit{
-        flex: 1;
+    button {
+      background: #1e90ff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.2s;
+
+      svg {
+        color: white;
+      }
+
+      &:hover {
+        background: #0d6efd;
+      }
     }
-    .withdrawal{
-        flex: 1;
-    }
+  }
 }

@@ -67,7 +67,7 @@
             />
         <label htmlFor="">Phone Number</label>
           <input
-              type="text"
+              type="number"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             />
