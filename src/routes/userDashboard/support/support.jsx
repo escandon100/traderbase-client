@@ -53,7 +53,7 @@ const Support = () => {
           as soon as possible.
         </p>
 
-        <form onSubmit={handleSubmit} className="support-form">
+        <form onSubmit={handleSubmit} className="support-form"> 
           <label>Subject</label>
           <input
             onChange={handleChange}

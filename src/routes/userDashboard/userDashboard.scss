@@ -204,8 +204,8 @@
   .main {
     flex: 4;
     height: 100vh;
-    background: #1f2025;
-    color: white;
+    background-color: #f9fafb;
+    color: #000;
     overflow-y: auto;
 
     @include responsiveness.small{
