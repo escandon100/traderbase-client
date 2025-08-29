@@ -8,6 +8,15 @@
   background: #f9fafb;
   min-height: 100vh;
 
+  .subscription-trade {
+  .no-subscription {
+    text-align: center;
+    font-size: 1.2rem;
+    color: gray;
+    margin: 20px 0;
+  }
+}
+
   .trade-card {
     background: #ffffff;
     padding: 2rem 2.5rem;

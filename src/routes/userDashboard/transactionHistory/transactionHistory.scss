@@ -3,15 +3,23 @@
 
 
 .transactionHistory {
-  padding: 2rem;
-  background: #f8fafc; // subtle light background
-  min-height: 100vh;
+  padding: 50px;
+  background: #f8fafc; 
+
+  @include responsiveness.small{
+    padding: 50px 20px;
+  }
+
 
   .pageTitle {
-    font-size: 1.8rem;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: #1f2937; // dark gray
+    margin-bottom: 15px;
+    color: #1f2937; 
+
+    @include responsiveness.small{
+      font-size: 18px;
+    }
   }
 
   .tableWrapper {
@@ -19,6 +27,7 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+
   }
 
   .styledTable {
@@ -30,11 +39,15 @@
       tr {
         th {
           text-align: left;
-          padding: 1rem;
-          font-size: 0.95rem;
+          padding: 10px;
+          font-size: 16px;
           font-weight: 600;
           color: #374151;
           border-bottom: 2px solid #e5e7eb;
+
+          @include responsiveness.small{
+            font-size: 12px;
+          }
         }
       }
     }
@@ -52,17 +65,22 @@
         }
 
         td {
-          padding: 1rem;
-          font-size: 0.9rem;
+          padding: 15px;
+          font-size: 16px;
           color: #374151;
           border-bottom: 1px solid #e5e7eb;
+
+          @include responsiveness.small{
+            padding: 10px;
+            font-size: 10px;
+          }
         }
 
 
         .type{
 
             &.deposit{
-            color: #059669; // green
+            color: #059669; 
              font-weight: 600;
 
             }
@@ -70,6 +88,15 @@
              &.withdrawal {
              color: #dc2626;
             font-weight: 600;
+            }
+
+            &.profit{
+              color: #059669; 
+              font-weight: 600;
+            }
+            &.bonus{
+              color: #059669; 
+              font-weight: 600;
             }
         }
         .status {
@@ -94,9 +121,15 @@
 
         .noData {
           text-align: center;
-          padding: 2rem;
+          padding: 20px;
           color: #6b7280;
-          font-size: 1rem;
+          font-size: 18px;
+          font-style: italic;
+
+          @include responsiveness.small{
+            font-size: 10px;
+            font-style: italic;
+          }
         }
       }
     }

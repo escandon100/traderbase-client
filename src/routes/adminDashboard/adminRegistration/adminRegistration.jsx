@@ -16,16 +16,18 @@
     country: '',
     });
 
+    const [registerMessage , setRegisterMessage] = useState("")
+
     const handleRegister = async (e) => {
      e.preventDefault();
 
 
     try {
         await axios.post('http://localhost:5000/api/userRegister/send', formData); 
-        alert('User registered successfully!');
+        setRegisterMessage('User registered successfully!')
     } catch (err) {
         console.error(err);
-        alert('Registration failed');
+        setRegisterMessage('Registration failed')
     }
     };
 
@@ -106,6 +108,7 @@
 
 
         <button type="submit">Register</button>
+        <p className="green">{registerMessage}</p>
         <p>© Copyright 2025   Trader Base FX   All Rights Reserved.</p>
 
       </form>

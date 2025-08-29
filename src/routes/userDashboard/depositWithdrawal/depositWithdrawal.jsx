@@ -10,11 +10,29 @@ const DepositWithdrawal = () => {
   const [btcAddress, setBtcAddress] = useState("");
   const [copied, setCopied] = useState(false);
 
-  // ⚡ Same BTC address you used in Packages.jsx
   const WALLET_ADDRESS = "bc1qexampleyourbtcaddress12345";
+
+  const paymentOptions = [
+    {name : "Bitcoin" , img: "/bitcoin.png"},
+      {name : "Bank Transfer" , img: "/bank.png"},
+      {name : "Credit Card" , img: "/visa.png"},
+      {name : "Yandex" , img: "/yandex.png"},
+      {name : "Neteller" , img: "/neteller.png"},
+      {name : "Webmoney" , img: "/webmoney.svg"},
+      {name :"QiWi Wallet", img:"/qiwi.png"},
+      {name :"Skrill", img:"/skrill.png"}
+
+  ]
+
+  const resetState = () => {
+  setShowOptions(false);
+  setBtcAddress("");
+  setConfirmation("");
+};
 
   const handleDeposit = (e) => {
     e.preventDefault();
+    resetState()
     if (!depositAmount) {
       setConfirmation("⚠️ Please enter an amount before depositing.");
       return;
@@ -31,6 +49,7 @@ const DepositWithdrawal = () => {
     }
     setConfirmation(`✅ You requested a withdrawal of $${withdrawAmount}.`);
     setWithdrawAmount("");
+    setBtcAddress("")
   };
 
   const handlePaymentOption = (method) => {
@@ -53,8 +72,7 @@ const DepositWithdrawal = () => {
 
   return (
     <div className="depositWithdrawal">
-      {/* Deposit Section */}
-      <div className="deposit card">
+      <div className="card">
         <form onSubmit={handleDeposit}>
           <h1>💰 Make a Deposit</h1>
           <div className="input-group">
@@ -64,7 +82,7 @@ const DepositWithdrawal = () => {
               placeholder="Enter amount"
               value={depositAmount}
               onChange={(e) => setDepositAmount(e.target.value)}
-              onFocus={() => setShowOptions(false)}
+              onFocus={() => {setShowOptions(false) ; setConfirmation("")}}
             />
           </div>
 
@@ -76,50 +94,24 @@ const DepositWithdrawal = () => {
             <div className="payment-options">
               <h3>Select Payment Method</h3>
               <div className="options-grid">
-                <div
-                  className="option-card recommended"
-                  onClick={() => handlePaymentOption("Bitcoin")}
-                >
-                  <img src="/bitcoin.png" alt="Bitcoin" />
-                  <span>Bitcoin</span>
-                  <span className="badge">Recommended</span>
-                </div>
-                <div className="option-card" onClick={() => handlePaymentOption("Bank Transfer")}>
-                  <img src="/bank.png" alt="Bank" />
-                  <span>Bank Transfer</span>
-                </div>
-                <div className="option-card" onClick={() => handlePaymentOption("Credit Card")}>
-                  <img src="/visa.png" alt="Visa" />
-                  <span>Credit Card</span>
-                </div>
-                <div className="option-card" onClick={() => handlePaymentOption("Yandex")}>
-                  <img src="/yandex.png" alt="Yandex" />
-                  <span>Yandex</span>
-                </div>
-                <div className="option-card" onClick={() => handlePaymentOption("Neteller")}>
-                  <img src="/neteller.png" alt="Neteller" />
-                  <span>Neteller</span>
-                </div>
-                <div className="option-card" onClick={() => handlePaymentOption("Webmoney")}>
-                  <img src="/webmoney.svg" alt="Webmoney" />
-                  <span>Webmoney</span>
-                </div>
-                <div className="option-card" onClick={() => handlePaymentOption("QiWi Wallet")}>
-                  <img src="/qiwi.png" alt="QiWi" />
-                  <span>QiWi Wallet</span>
-                </div>
-                <div className="option-card" onClick={() => handlePaymentOption("Skrill")}>
-                  <img src="/skrill.png" alt="Skrill" />
-                  <span>Skrill</span>
-                </div>
+                {paymentOptions.map((option)=>{
+                  return(
+                     <div className={`${option.name === "Bitcoin" ? "recommended ":""} option-card`} onClick={()=>handlePaymentOption(option.name)} >
+                      <img src={`${option.img}`} alt="" />
+                      <span>{option.name}</span>
+                      {option.name === "Bitcoin" ? <span className="badge">Recommended</span> : ""}
+                  </div>
+                   )
+
+                  })
+                }
               </div>
             </div>
           )}
         </form>
       </div>
 
-      {/* Withdrawal Section */}
-      <div className="withdrawal card">
+      <div className="card">
         <form onSubmit={handleWithdrawal}>
           <h1>🏦 Make a Withdrawal</h1>
           <div className="input-group">
@@ -129,6 +121,7 @@ const DepositWithdrawal = () => {
               placeholder="Enter amount"
               value={withdrawAmount}
               onChange={(e) => setWithdrawAmount(e.target.value)}
+              onFocus={() => setConfirmation("")}
             />
           </div>
           <button type="submit" className="withdraw-btn">
@@ -137,7 +130,6 @@ const DepositWithdrawal = () => {
         </form>
       </div>
 
-      {/* Confirmation Section */}
       {confirmation && (
         <div className="confirmation">
           <p>{confirmation}</p>
@@ -146,7 +138,7 @@ const DepositWithdrawal = () => {
               <strong>Send BTC to:</strong>
               <div className="address-row">
                 <p>{btcAddress}</p>
-                <button onClick={handleCopy} title="Copy BTC Address">
+                <button onClick={handleCopy} >
                   {copied ? <Check size={18} /> : <Copy size={18} />}
                 </button>
               </div>

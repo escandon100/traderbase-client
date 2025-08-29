@@ -8,7 +8,7 @@ const TransactionHistory = () => {
 
   return (
     <div className="transactionHistory">
-      <h2 className="pageTitle">📊 Transaction History</h2>
+      <h2 className="pageTitle">Transaction History</h2>
 
       <div className="tableWrapper">
         <table className="styledTable">

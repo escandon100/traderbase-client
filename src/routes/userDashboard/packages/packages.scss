@@ -3,11 +3,28 @@
   background: #f9fafb;
   color: #1f2937;
 
+  /* Balance */
+  .balanceBox {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.4rem;
+      color: #fff;
+      background: #16a34a;
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 14px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
   h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: #22c55e;
+    color: #111827;
   }
 
   .subtitle {
@@ -19,158 +36,108 @@
 
   .plansGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 0 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    padding: 0 10px;
   }
 
   .planCard {
     background: #ffffff;
     border: 1px solid #e5e7eb;
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 1.5rem;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
-    h3 { color: #22c55e; margin-bottom: 1rem; }
-    ul { text-align: left; margin-bottom: 1.5rem; li { margin-bottom: 0.6rem; color: #374151; } }
+    h3 { 
+      color: #16a34a; 
+      margin-bottom: 1rem; 
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    ul { 
+      text-align: left; 
+      margin-bottom: 1.5rem; 
+      padding-left: 0;
+
+      li { 
+        margin-bottom: 0.6rem; 
+        color: #374151; 
+        font-size: 0.95rem;
+      } 
+    }
 
     .subscribeBtn {
       display: inline-block;
-      background: #22c55e;
+      background: #16a34a;
       color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
       font-weight: 600;
       text-decoration: none;
-      transition: 0.3s;
-      &:hover { background: #1d4ed8; }
-    }
-  }
+      transition: background 0.3s ease;
 
-  /* Payment Modal */
-  .paymentOverlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-
-    .paymentBox {
-      background: #fff;
-      color: #1f2937;
-      padding: 2rem;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 500px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-
-      h2 { color: #22c55e; margin-bottom: 1rem; }
-      p { margin-bottom: 1.5rem; }
-
-      .closeBtn {
-        position: absolute;
-        top: 10px; right: 15px;
-        background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: #374151;
-      }
-
-      .optionsGrid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 1rem;
-      }
-
-      .optionCard {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1rem;
-        border-radius: 12px;
-        border: 1px solid #e5e7eb;
-        cursor: pointer;
-        transition: 0.3s;
-        position: relative;
-
-        &:hover {
-          background: #22c55e;
-          color: #fff;
-          transform: translateY(-5px);
-        }
-
-        img { width: 40px; height: 40px; }
-        .recommendedTag {
-          position: absolute;
-          top: 5px; right: 5px;
-          background: #f59e0b;
-          color: #fff;
-          font-size: 0.7rem;
-          padding: 2px 6px;
-          border-radius: 4px;
-          font-weight: 600;
-        }
+      &:hover { 
+        background: #13af4c; 
       }
     }
   }
 }
-.btcAddress {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
 
-  .wallet {
-    font-weight: bold;
-    color: #d97706;
-    word-break: break-all;
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modalBox {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+  h2 {
+    color: #16a34a;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
   }
 
-  .copyBtn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #22c55e;
+  p {
+    margin-bottom: 1.5rem;
+    color: #374151;
+    font-size: 1rem;
+  }
+
+  .closeBtn {
+    background: #16a34a;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 10px 18px;
     border-radius: 8px;
-    cursor: pointer;
     font-weight: 600;
-    transition: 0.3s;
+    cursor: pointer;
+    transition: background 0.3s ease;
 
     &:hover {
-      background: #16a34a;
+      background: #13af4c;
     }
-
-    svg {
-      stroke-width: 2;
-    }
-  }
-}
-
-.confirmBtn {
-  margin-top: 12px;
-  background: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.2s;
-
-  &:hover {
-    background: #218838;
   }
 }

@@ -2,70 +2,230 @@
 
 
 .adminDashboard{
-    color: black;
     display: flex;
+    width: 100%;
 
+  .navigationMenu {
+    flex: 1;
+    background: black;
+    color: white;
+    height: 100vh;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+    font-size: 18px;
+  
+    @include responsiveness.small{
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 999;
+      font-size: 14px;
 
-      & .navigationMenu{
-        flex : 0.6;
-        height: 100vh;
-        background-color: black;
-        color: #fff;
-        border-right: 1px solid #fff;
-        font-size: 18px;
-        border-bottom: 4px solid green;
+      &.collapsed {
+        width: 70px;
 
+            ul li {
+        justify-content: center;
 
-        ul{
+      }
 
-            li{
-                padding: 15px 20px;
-                margin-bottom: 10px;
-                list-style: none;
-                color: #807f7e;
+        .label{
+          display: none;
+        }
+      }
 
-                &.profile{
-                    border-bottom: 1px solid white;
-                }
+      &.expanded {
+        width: 100%;
 
-                img{
-                    height: 50px;
-                    width: 200px;
-                }
-
-                &.activeNav{
-                    background-color: white;
-                    border-radius: 8px;
-                    color: black;
-
-                    & .icon{
-                        color: black;
-                    }
-                }
-
-
-                & .icon{
-                    margin-right: 10px;
-                }
-
-
-            }
+          .navHeader{
+            display: block;
+            height: 50px;
+            width: 150px;  
+            padding:15px;
         }
 
+       
 
+        .label{
+          display: block;
+        }
+      }
+      
     }
 
-       .main{
-        height: 100vh;
-        flex: 4;
-        border-bottom: 2px solid red;
-        background-color: #1f2025;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-        color: white;
+    @include responsiveness.medium{
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 999;
+      font-size: 18px;
 
+      &.collapsed {
+        width: 70px;
+
+            ul li {
+        justify-content: center;
+
+      }
+
+        .label{
+          display: none;
+        }
+      }
+
+      &.expanded {
+        width: 50%;
+
+
+        .label{
+          display: block;
+        }
+
+            .navHeader{
+            display: block;
+            height: 50px;
+            width: 200px; 
+            padding: 25px; 
+        }
+      }
+    } 
+
+
+    @include responsiveness.largest{
+      flex: 1;
     }
+
+
+    .menuToggle {
+      display: none;
+   
+      @include responsiveness.small{
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+
+        img {
+          width: 28px;
+          height: 28px;
+         }
+        }
+         @include responsiveness.medium{
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+
+        img {
+          width: 40px;
+          height: 40px;
+         }
+        }
+      }   
+    
+
+
+  
+
+    ul {
+   
+      margin: 0;
+      padding: 0;
+
+         & .navHeader{
+          display: block;
+          height : 50px;
+          width: 200px;
+          padding: 20px 25px;
+
+
+          @include responsiveness.small{
+            display: none;
+          }
+          @include responsiveness.medium{
+            display: none;
+          }
+        }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 25px 25px;
+        list-style: none;
+        cursor: pointer;
+        color: #b5b5b5;
+
+        @include responsiveness.small{
+            padding: 20px 15px;
+        }
+
+        @include responsiveness.medium{
+          padding: 35px;
+        }
+
+     
+
+    
+
+        .icon{
+          height: 20px;
+          width: 20px;
+
+          @include responsiveness.medium{
+            height: 30px;
+            width: 30px;
+          }
+        }
+
+        .label {
+
+          font-size: 18px;
+
+          @include responsiveness.small{
+            font-size: 14px;
+          }
+
+      
+        }
+
+        &.activeNav {
+          background: #fff;
+          color: black;
+
+          .icon {
+            color: black;
+          }
+        }
+      }
+    }
+
+  }
+
+  .main {
+    flex: 4;
+    height: 100vh;
+    background-color: #f9fafb;
+    color: #000;
+    overflow-y: auto;
+
+    @include responsiveness.small{
+       margin-left: 70px;
+       flex: 10;
+    } 
+       @include responsiveness.medium{
+       margin-left: 70px;
+       flex: 10;
+    }   
+
+
+
+    @include responsiveness.largest{
+      flex: 6;
+    }
+
+ 
+  }
 }
-
 
 

@@ -8,7 +8,7 @@ const AdminTransaction = () => {
         const [form , setForm] = useState({
         userId : "",
         type : "",
-        amount : "",
+        amount : Number,
         status : "",
         date : Date
     

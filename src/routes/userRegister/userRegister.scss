@@ -1,121 +1,174 @@
-@use "../../../styles/responsiveness.scss";
+.userRegister {
+  background: linear-gradient(135deg, #231839, #2c2150);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 
+  .register-card {
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
 
-.userRegister{
-    background-color: #231839;
-    color: black;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-    @include responsiveness.small{
-        gap: 20px;
+    .logo {
+      width: 220px;
+      margin: 0 auto 10px;
+      display: block;
     }
 
-    img{
-        height: 100px;
-        width: 400px;
+    h1 {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #231839;
+    }
 
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
+    }
 
-        @include responsiveness.small{
-            width: 200px;
-            height: 50px;
-        
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      text-align: left;
+
+      label {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: #231839;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      input, select {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+
+        &:focus {
+          border-color: #4081b8;
+          box-shadow: 0 0 8px rgba(64,129,184,0.2);
+          outline: none;
         }
-    }
+      }
 
+      .error {
+        color: #e63946;
+        font-size: 13px;
+        margin-top: 4px;
+      }
 
-    form{
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding: 20px 30px 30px;
+      .alert {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
         text-align: center;
-        border-radius: 10px;
+      }
+      .success {
+        background: #e8f9f1;
+        color: #2a9d8f;
+        border: 1px solid #2a9d8f;
+      }
+      .fail {
+        background: #fdecea;
+        color: #e63946;
+        border: 1px solid #e63946;
+      }
 
+      .names {
+        display: flex;
+        gap: 15px;
 
-        h1{
-
-            @include responsiveness.small{
-                font-size: 20px;
-            }
+        .name {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
         }
-        p{
-            font-size: 16px;
+      }
 
-            @include responsiveness.small{
-                font-size: 12px;
-            }
+      .password-input {
+        display: flex;
+        align-items: center;
+        position: relative;
 
-            .link{
-                color :#4081b8;
-            }
-        }
-    
-        label{
-            font-size: 18px;
-            text-align: left;
-
-
-            @include responsiveness.small{
-                font-size: 14px;
-            }
+        input {
+          flex: 1;
+          padding-right: 35px;
         }
 
-     
+        .toggle-icon {
+          position: absolute;
+          right: 10px;
+          cursor: pointer;
+          color: #666;
+          transition: 0.2s;
 
-        input{
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            font-size: 18px;
-            border-bottom: 2px solid grey;
-
-            &:focus{
-                box-shadow: 5px 5px 5px ;
-                outline: none;
-            }
-
-            @include responsiveness.small{
-                font-size: 14px;
-            }
-
-
+          &:hover {
+            color: #4081b8;
+          }
         }
-        button{
-        background-color: #4081b8;
+      }
+
+      button {
+        margin-top: 10px;
+        background: #4081b8;
         border: none;
-        padding: 15px;
-        border-radius: 5px;
-        font-size: 18px;
-        color: #ffff;
+        padding: 14px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s ease;
 
-        @include responsiveness.small{
-            font-size: 14px;
+        &:hover {
+          background: #2e6a97;
         }
-
-    }
-    
-        .names{
-            text-align: left;
-            display: flex;
-            gap: 20px;
-
-            .name{
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-      
-
-
+      }
     }
 
+    .login-text {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #444;
 
+      a {
+        color: #4081b8;
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .footer {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #999;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }

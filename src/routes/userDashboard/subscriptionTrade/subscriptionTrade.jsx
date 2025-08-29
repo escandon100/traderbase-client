@@ -4,7 +4,23 @@ import { useOutletContext } from "react-router";
 
 const SubscriptionTrade = () => {
   const message = useOutletContext();
-  const subscription = message.subscriptions[0]; // Assuming first subscription for now
+  const subscriptions = message.subscriptions || []; 
+
+    if (subscriptions.length === 0) {
+    return (
+      <div className="subscription-trade">
+        <div className="trade-card">
+          <h2 className="title">Subscription Trade Details</h2>
+          <p className="no-subscription">No active subscriptions</p>
+        </div>
+      </div>
+    );
+  }
+
+    const subscription = subscriptions[0];
+
+
+
 
   return (
     <div className="subscription-trade">
@@ -36,7 +52,7 @@ const SubscriptionTrade = () => {
             <span className="label">Status:</span>
             <span
               className={`value status ${
-                subscription.status === "active" ? "active" : "inactive"
+                subscription.status === "Active" ? "active" : "inactive"
               }`}
             >
               {subscription.status}

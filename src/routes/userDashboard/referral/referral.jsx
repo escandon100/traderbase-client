@@ -3,12 +3,7 @@ import "./referral.scss";
 import { Copy } from "lucide-react";
 
 const Referral  = () => {
-  const referralLink = "https://traderbase.com/register?ref=USER123"; // Replace dynamically
-  const referredUsers = [
-    { name: "John Doe", email: "john@example.com", status: "active", joined: "2025-08-10" },
-    { name: "Jane Smith", email: "jane@example.com", status: "pending", joined: "2025-08-12" },
-    { name: "Mike Brown", email: "mike@example.com", status: "inactive", joined: "2025-08-14" },
-  ];
+  const referralLink = "https://tradersbasefx.com/userRegister";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(referralLink);
@@ -31,7 +26,6 @@ const Referral  = () => {
 
       <div className="users-card">
         <h3 className="section-title">Your Referrals</h3>
-        {referredUsers.length > 0 ? (
           <table className="referral-table">
             <thead>
               <tr>
@@ -42,21 +36,13 @@ const Referral  = () => {
               </tr>
             </thead>
             <tbody>
-              {referredUsers.map((user, index) => (
-                <tr key={index}>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>
-                    <span className={`status ${user.status}`}>{user.status}</span>
-                  </td>
-                  <td>{new Date(user.joined).toLocaleDateString()}</td>
-                </tr>
-              ))}
+              <tr>
+                <td colSpan="4" className="noData">
+                  <p className="no-referrals">You haven’t referred anyone yet.</p>
+                </td>
+              </tr>
             </tbody>
           </table>
-        ) : (
-          <p className="no-referrals">You haven’t referred anyone yet.</p>
-        )}
       </div>
     </div>
   );

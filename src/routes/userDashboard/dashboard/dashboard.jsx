@@ -7,12 +7,25 @@ import "./dashboard.scss";
 const Dashboard = () => {
   const message = useOutletContext();
 
+
+
+  const finance = message.finances[0] || {
+  deposited: 0,
+  profit: 0,
+  bonus: 0,
+  refBonus: 0,
+  balance: 0
+};
+
+  
+
+
   const finances = [
-    { icon: faDownload, label: "Deposit", value: message.deposit || "$0" },
-    { icon: faCoins, label: "Profit", value: message.profit || "$0" },
-    { icon: faGift, label: "Bonus", value: message.bonus || "$0" },
-    { icon: faRetweet, label: "Ref. Bonus", value: message.refBonus || "$0" },
-    { icon: faCoins, label: "Balance", value: message.balance || "$0" },
+    { icon: faDownload, label: "Deposit", value: finance.deposited || "$0" },
+    { icon: faCoins, label: "Profit", value: finance.profit || "$0" },
+    { icon: faGift, label: "Bonus", value: finance.bonus || "$0" },
+    { icon: faRetweet, label: "Ref. Bonus", value: finance.refBonus || "$0" },
+    { icon: faCoins, label: "Balance", value: finance.balance || "$0" },
   ];
 
   return (
@@ -25,7 +38,7 @@ const Dashboard = () => {
         </p>
       </div>
 
-      <div className="financesGrid">
+      <div className="finances">
         {finances.map((item, idx) => (
           <div className="financeCard" key={idx}>
             <FontAwesomeIcon className="icon" icon={item.icon} />
