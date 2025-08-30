@@ -3,28 +3,45 @@
 .subscription-trade {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 3rem 1rem;
-  background: #f9fafb;
-  min-height: 100vh;
+  padding: 50px;
 
-  .subscription-trade {
-  .no-subscription {
-    text-align: center;
-    font-size: 1.2rem;
-    color: gray;
-    margin: 20px 0;
+
+  @include responsiveness.small{
+    padding: 50px 20px;
   }
-}
 
+
+    .no-subscription {
+      text-align: center;
+      font-size: 18px;
+      color: gray;
+      margin: 20px;
+      font-style: italic;
+
+
+      @include responsiveness.small{
+        font-size: 14px;
+      }
+    }
+
+  
   .trade-card {
     background: #ffffff;
-    padding: 2rem 2.5rem;
+    padding: 20px;
     border-radius: 16px;
-    max-width: 650px;
-    width: 100%;
+    width: 50%;
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+    @include responsiveness.small{
+      width: 100%;
+      padding: 20px 10px;
+    }
+
+    @include responsiveness.medium{
+      width: 80%;
+    }
 
     &:hover {
       transform: translateY(-3px);
@@ -32,42 +49,72 @@
     }
 
     .title {
-      font-size: 1.7rem;
+      font-size: 24px;
       font-weight: 600;
-      margin-bottom: 2rem;
+      margin-bottom: 20px;
       color: #1e293b;
       text-align: center;
+
+
+      @include responsiveness.small{
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
     }
 
     .trade-info {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 20px;
 
+      @include responsiveness.small{
+        gap: 10px;
+      }
+
+
+  
       .info-item {
         display: flex;
         justify-content: space-between;
-        padding: 0.9rem 1.2rem;
+        padding: 15px;
         border-bottom: 1px solid #e2e8f0;
+
+        @include responsiveness.small{
+          flex-direction: column;
+          gap: 10px;
+        }
 
         .label {
           font-weight: 600;
           color: #475569;
-          font-size: 1rem;
+          font-size: 18px;
+
+          @include responsiveness.small{
+            font-size: 14px;
+          }
         }
 
         .value {
           color: #1e293b;
-          font-size: 1rem;
+          font-size: 16px;
           font-weight: 500;
+
+          @include responsiveness.small{
+            font-size: 12px;
+          }
         }
 
         .status {
           text-transform: capitalize;
           font-weight: 600;
-          padding: 0.2rem 0.8rem;
+          padding: 10px;
           border-radius: 8px;
-          font-size: 0.95rem;
+          font-size: 16px;
+
+          @include responsiveness.small{
+            font-size: 12px;
+            width: min-content;
+          }
 
           &.active {
             background: #dcfce7;
@@ -88,25 +135,3 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 650px) {
-  .subscription-trade {
-    padding: 2rem 1rem;
-
-    .trade-card {
-      padding: 1.5rem;
-
-      .title {
-        font-size: 1.4rem;
-      }
-
-      .trade-info {
-        .info-item {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 0.5rem;
-        }
-      }
-    }
-  }
-}

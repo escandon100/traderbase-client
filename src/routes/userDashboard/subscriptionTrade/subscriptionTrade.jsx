@@ -10,7 +10,7 @@ const SubscriptionTrade = () => {
     return (
       <div className="subscription-trade">
         <div className="trade-card">
-          <h2 className="title">Subscription Trade Details</h2>
+          <h2 className="title">Subscription Details</h2>
           <p className="no-subscription">No active subscriptions</p>
         </div>
       </div>
@@ -20,12 +20,10 @@ const SubscriptionTrade = () => {
     const subscription = subscriptions[0];
 
 
-
-
   return (
     <div className="subscription-trade">
       <div className="trade-card">
-        <h2 className="title">Subscription Trade Details</h2>
+        <h2 className="title">Subscription Details</h2>
 
         <div className="trade-info">
           <div className="info-item">

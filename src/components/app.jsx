@@ -203,6 +203,10 @@ const App = () => {
         path : "/userDashboard",
         element : <UserDashboard/>,
         children : [
+           {
+            index:true,
+            element:<Dashboard/>
+          },
       
            {
             path : "dashboard",

@@ -135,7 +135,7 @@ const DepositWithdrawal = () => {
           <p>{confirmation}</p>
           {btcAddress && (
             <div className="btc-address">
-              <strong>Send BTC to:</strong>
+              <span>Send BTC to:</span>
               <div className="address-row">
                 <p>{btcAddress}</p>
                 <button onClick={handleCopy} >

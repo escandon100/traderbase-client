@@ -10,15 +10,22 @@
 
   @include responsiveness.small{
       flex-direction: column;
+      align-items: center;
+
+      padding: 50px 20px;
+      gap: 50px;
   }
 
   @include responsiveness.medium{
     flex-direction: column;
+    align-items: center;
+    gap: 100px;
+
   }
 
 
   .card{
-    width: 30%;
+    width: 40%;
     background: #ffffff;
     border-radius: 16px;
     padding: 20px;
@@ -43,6 +50,10 @@
       margin-bottom: 20px;
       color: #1e293b;
       text-align: center;
+
+      @include responsiveness.small{
+        font-size: 20px;
+      }
     }
     .input-group {
 
@@ -73,6 +84,11 @@
         border: none;
         outline: none;
         width: 100%;
+
+        @include responsiveness.small{
+          font-size: 14px;
+          padding: 5px;
+        }
 
         &:focus {
           background: #f9fafb;
@@ -135,7 +151,7 @@
       align-items: center;
       gap: 10px;
       background: #fff;
-      padding: 20px;
+      padding: 10px;
       border-radius: 12px;
       cursor: pointer;
       font-weight: 500;
@@ -143,6 +159,10 @@
       width: 150px;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
       transition: 0.3s;
+
+      @include responsiveness.medium{
+        padding: 10px;
+      }
 
       &:hover {
         background: #1e90ff;
@@ -176,34 +196,46 @@
   }
   
   .confirmation {
-      width: 100%;
+      width: 80%;
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 20px;
+
+  
 
       p {
         display: inline-block;
         background: #e0f7ec;
         color: #065f46;
-        padding: 1rem 1.5rem;
-        border-radius: 12px;
+        padding: 10px;
+        border-radius: 5px;
         font-weight: 500;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
         animation: fadeIn 0.3s ease-in-out;
+        font-size: 18px;
+
+          @include responsiveness.small{
+            font-size: 14px;
+      }
+
+  
       }
     }
 
 
     .btc-address {
-      margin-top: 1rem;
+      margin-top: 10px;
       background: #f9fafb;
-      padding: 1rem;
+      padding: 10px;
       border-radius: 10px;
       color: #111827;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+      font-size: 18px;
 
-      strong {
+   
+
+      span {
         display: block;
-        margin-bottom: 0.5rem;
+        font-weight: 700;
       }
 
       .address-row {
@@ -211,24 +243,39 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+        margin-top: 20px;
 
         p {
-          font-family: monospace;
-          font-size: 0.9rem;
+          font-size: 18px;
+          border-radius: 5px;
+          padding: 15px;
           word-break: break-all;
-          flex: 1;
+          width: 100%;
+
+
+          
+          @include responsiveness.small{
+            font-size: 14px;
+            padding: 5px;
+
+          }
+
         }
 
         button {
           background: #1e90ff;
           border: none;
-          border-radius: 6px;
-          padding: 0.4rem;
+          border-radius: 5px;
+          padding: 15px;
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
           transition: 0.2s;
+
+          @include responsiveness.small{
+            padding: 5px;
+          }
 
           svg {
             color: white;

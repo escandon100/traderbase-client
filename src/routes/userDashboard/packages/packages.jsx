@@ -46,12 +46,10 @@ const Packages = () => {
 
   return (
     <div className="packages">
-      {/* Balance */}
       <div className="balanceBox">
-        <h2>Your Balance: ${finances.balance}</h2>
+        <h2>Balance: ${finances.balance}</h2>
       </div>
 
-      {/* Weekly Plans */}
       <section className="plansSection">
         <h1>Weekly Plans</h1>
         <p className="subtitle">Choose a weekly investment plan that matches your trading goals.</p>
@@ -72,7 +70,6 @@ const Packages = () => {
         </div>
       </section>
 
-      {/* Monthly Plans */}
       <section className="plansSection">
         <h1>Monthly Plans</h1>
         <p className="subtitle">Unlock long-term opportunities with our monthly plans.</p>
@@ -96,7 +93,7 @@ const Packages = () => {
       {showModal && (
         <div className="modalOverlay">
           <div className="modalBox">
-            <h2>{`${successful ? "🎉 Subscription Successful!" : "Subscrption Failed"}`}</h2>
+            <h2 className={`${successful ? "" : "failed"}`}>{`${successful ? "🎉 Subscription Successful!" : "Subscription Failed"}`}</h2>
             {successful ? <p>You have subscribed to the <strong>{selectedPlan}</strong> plan.</p> : <p>Insufficient funds </p>}
              {successful ? <button onClick={() => setShowModal(false)} className="closeBtn">
               Close

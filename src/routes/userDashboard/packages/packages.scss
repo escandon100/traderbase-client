@@ -1,15 +1,19 @@
+@use "../../../../styles/responsiveness.scss";
+
+
 .packages {
-  padding: 40px 20px;
+  padding: 50px;
   background: #f9fafb;
   color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-  /* Balance */
   .balanceBox {
     text-align: center;
-    margin-bottom: 2rem;
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 18px;
       color: #fff;
       background: #16a34a;
       display: inline-block;
@@ -49,6 +53,8 @@
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    font-size: 18px;
+
 
     &:hover {
       transform: translateY(-4px);
@@ -57,20 +63,20 @@
 
     h3 { 
       color: #16a34a; 
-      margin-bottom: 1rem; 
-      font-size: 1.2rem;
+      margin-bottom: 15px; 
+      font-size: 24px;
       font-weight: 600;
     }
 
     ul { 
-      text-align: left; 
-      margin-bottom: 1.5rem; 
-      padding-left: 0;
+      text-align: center; 
+      margin-bottom: 20px; 
 
       li { 
-        margin-bottom: 0.6rem; 
         color: #374151; 
-        font-size: 0.95rem;
+        font-size: 18px;
+        list-style-type: none;
+        padding: 10px;
       } 
     }
 
@@ -91,7 +97,6 @@
   }
 }
 
-/* Modal */
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -103,6 +108,8 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
+
+
 }
 
 .modalBox {
@@ -118,6 +125,10 @@
     color: #16a34a;
     margin-bottom: 1rem;
     font-size: 1.4rem;
+
+    &.failed{
+      color: rgb(196, 36, 36);
+    }
   }
 
   p {
