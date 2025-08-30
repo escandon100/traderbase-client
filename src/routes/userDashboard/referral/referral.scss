@@ -3,77 +3,111 @@
 .refer-users {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 3rem 1rem;
-  min-height: 100vh;
-  background: #f9fafb;
+  gap: 20px;
+  padding: 50px;
+  align-items: center;
 
-  .refer-card,
-  .users-card {
+
+  @include responsiveness.small{
+    padding: 50px 20px;
+  }
+
+  .refer-card,.users-card {
     background: #fff;
-    padding: 2rem;
+    padding: 20px;
     border-radius: 16px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
+    width: 50%;
+
+    @include responsiveness.small{
+      width: 80%;
+      padding: 20px 15px;
+    }
+    @include responsiveness.medium{
+      width: 80%;
+    }
   }
 
   .title {
-    font-size: 1.7rem;
+    font-size: 24px;
     font-weight: 600;
     color: #1e293b;
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
+
+    @include responsiveness.small{
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 16px;
     color: #64748b;
-    margin-bottom: 1.5rem;
+    margin-bottom: 15px;
+
+    @include responsiveness.small{
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
   }
 
   .referral-box {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 10px;
+
 
     input {
       flex: 1;
-      padding: 0.8rem 1rem;
+      padding: 10px;
       border: 1px solid #cbd5e1;
       border-radius: 10px;
-      font-size: 1rem;
+      font-size: 16px;
       background: #f8fafc;
       color: #334155;
       outline: none;
-    }
 
-    .copy-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 0.7rem 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: background 0.2s ease;
+      @include responsiveness.small{
+        font-size: 12px;
 
-      &:hover {
-        background: #1d4ed8;
       }
     }
+
+     button {
+          background: #1e90ff;
+          border: none;
+          border-radius: 5px;
+          padding: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: 0.2s;
+
+          @include responsiveness.small{
+            padding: 5px;
+          }
+
+          svg {
+            color: white;
+          }
+
+          &:hover {
+            background: #0d6efd;
+          }
+        }
   }
 
   .users-card {
     .section-title {
-      font-size: 1.4rem;
+      font-size: 24px;
       font-weight: 600;
       color: #1e293b;
-      margin-bottom: 1rem;
+      margin-bottom: 20px;
+
+      @include responsiveness.small{
+        font-size: 18px;
+      }
     }
 
     .referral-table {
@@ -83,85 +117,41 @@
 
       th,
       td {
-        padding: 0.9rem 1rem;
+        padding: 20px;
         text-align: left;
         border-bottom: 1px solid #e2e8f0;
-        font-size: 0.95rem;
+        font-size: 18px;
+
+        @include responsiveness.small{
+            padding: 10px;
+            font-size: 12px;
+        }
       }
 
       th {
         font-weight: 600;
         color: #475569;
         background: #f8fafc;
-      }
+      
 
-      td {
         color: #334155;
       }
 
-      .status {
-        text-transform: capitalize;
-        padding: 0.2rem 0.7rem;
-        border-radius: 6px;
-        font-weight: 600;
-        font-size: 0.85rem;
-
-        &.active {
-          background: #dcfce7;
-          color: #15803d;
-        }
-
-        &.pending {
-          background: #fef9c3;
-          color: #a16207;
-        }
-
-        &.inactive {
-          background: #fee2e2;
-          color: #b91c1c;
-        }
-      }
+    
     }
 
     .no-referrals {
       text-align: center;
       color: #64748b;
-      margin-top: 1.5rem;
-      font-size: 1rem;
-    }
+      margin-top: 15px;
+      font-size: 16px;
+      font-style: italic;
 
-        .noData {
-          text-align: center;
-          padding: 2rem;
-          color: #6b7280;
-          font-size: 1rem;
-        }
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .refer-users {
-    .referral-box {
-      flex-direction: column;
-
-      input {
-        width: 100%;
-      }
-
-      .copy-btn {
-        width: 100%;
-        justify-content: center;
+      @include responsiveness.small{
+        font-size: 12px;
       }
     }
 
-    .referral-table {
-      font-size: 0.85rem;
-
-      th,
-      td {
-        padding: 0.7rem;
-      }
-    }
+    
   }
 }

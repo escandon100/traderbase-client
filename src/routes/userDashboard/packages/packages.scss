@@ -9,6 +9,10 @@
   flex-direction: column;
   gap: 20px;
 
+
+  @include responsiveness.small{
+    padding: 50px 20px;
+  }
   .balanceBox {
     text-align: center;
 
@@ -26,35 +30,49 @@
 
   h1 {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 26px;
+    margin-bottom: 10px;
     color: #111827;
+
+    @include responsiveness.small{
+      font-size: 20px;
+    }
   }
 
   .subtitle {
     text-align: center;
-    font-size: 1rem;
+    font-size: 18px;
     color: #6b7280;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
+
+    @include responsiveness.small{
+      font-size: 14px;
+    }
   }
 
   .plansGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+
+    @include responsiveness.small{
+      flex-direction: column;
+    }
   }
 
   .planCard {
     background: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 20px 50px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    font-size: 18px;
 
+    @include responsiveness.small{
+      padding: 20px;
+    }
 
     &:hover {
       transform: translateY(-4px);
@@ -66,6 +84,10 @@
       margin-bottom: 15px; 
       font-size: 24px;
       font-weight: 600;
+
+      @include responsiveness.small{
+        font-size: 20px;
+      }
     }
 
     ul { 
@@ -77,6 +99,10 @@
         font-size: 18px;
         list-style-type: none;
         padding: 10px;
+
+        @include responsiveness.small{
+          font-size: 14px;
+        }
       } 
     }
 
@@ -114,17 +140,24 @@
 
 .modalBox {
   background: #ffffff;
-  padding: 2rem;
+  padding: 20px;
   border-radius: 16px;
   text-align: center;
-  max-width: 420px;
-  width: 90%;
+  width: 30%;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+  @include responsiveness.small{
+      width: 50%;
+  }
 
   h2 {
     color: #16a34a;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-size: 18px;
+
+    @include responsiveness.small{
+      font-size: 18px;
+    }
 
     &.failed{
       color: rgb(196, 36, 36);
@@ -132,9 +165,14 @@
   }
 
   p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 15px;
     color: #374151;
-    font-size: 1rem;
+    font-size: 18px;
+
+    @include responsiveness.small{
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
   }
 
   .closeBtn {
@@ -146,6 +184,12 @@
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s ease;
+
+
+    @include responsiveness.small{
+      padding: 10px;
+      font-size: 14px;
+    }
 
     &:hover {
       background: #13af4c;

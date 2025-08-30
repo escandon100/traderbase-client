@@ -29,8 +29,8 @@ const Navbar = () => {
         <Link to="/"><img src="logo.png" alt="Logo" /></Link>
       </div>
       <div className="accountButtonsMobile">
-          <button className='registrationButton'>OPEN AN ACCOUNT</button>
-          <button className='loginButton'>LOGIN</button>
+          <Link to="/userRegister" href="/userRegister" className=' button registrationButton'>OPEN AN ACCOUNT</Link>
+          <Link to="/userDashboard" className=' button loginButton'>LOGIN</Link>
         </div>
       <div className="navIcons">
  

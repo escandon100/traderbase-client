@@ -1,13 +1,19 @@
-import React from "react";
+import {React , useState}from "react";
 import "./referral.scss";
-import { Copy } from "lucide-react";
+import { Copy , Check} from "lucide-react";
 
 const Referral  = () => {
   const referralLink = "https://tradersbasefx.com/userRegister";
 
-  const copyToClipboard = () => {
+    const [copied, setCopied] = useState(false);
+  
+
+
+
+    const handleCopy = () => {
     navigator.clipboard.writeText(referralLink);
-    alert("Referral link copied!");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -18,9 +24,9 @@ const Referral  = () => {
 
         <div className="referral-box">
           <input type="text" value={referralLink} readOnly />
-          <button onClick={copyToClipboard} className="copy-btn">
-            <Copy size={18} /> Copy
-          </button>
+          <button onClick={handleCopy} >
+              {copied ? <Check size={18} /> : <Copy size={18} />}
+            </button>
         </div>
       </div>
 

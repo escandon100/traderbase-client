@@ -5,7 +5,6 @@ import { useOutletContext } from "react-router";
 import "./packages.scss";
 
 const Packages = () => {
-  const [userBalance, setUserBalance] = useState(3000);
   const [selectedPlan, setSelectedPlan] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [successful , setSuccessful ] = useState(true)
@@ -34,7 +33,6 @@ const Packages = () => {
     const planCost = isWeekly ? plan.amount : plan.minAmount;
 
     if (finances.balance >= planCost) {
-      setUserBalance(finances - planCost); 
       setSelectedPlan(plan.name);
       setShowModal(true);
       setSuccessful(true)
@@ -93,8 +91,8 @@ const Packages = () => {
       {showModal && (
         <div className="modalOverlay">
           <div className="modalBox">
-            <h2 className={`${successful ? "" : "failed"}`}>{`${successful ? "🎉 Subscription Successful!" : "Subscription Failed"}`}</h2>
-            {successful ? <p>You have subscribed to the <strong>{selectedPlan}</strong> plan.</p> : <p>Insufficient funds </p>}
+            <h2 className={`${successful ? "" : "failed"}`}>{`${successful ? "🎉 Your Subscription is being processed!" : "Subscription Failed"}`}</h2>
+            {successful ? <p>Your subscription for the {selectedPlan} plan is currently being processed.</p> : <p>Insufficient funds </p>}
              {successful ? <button onClick={() => setShowModal(false)} className="closeBtn">
               Close
             </button> : <Link to="/userDashboard/depositWithdrawal" onClick={() => setShowModal(false)} className="closeBtn">
